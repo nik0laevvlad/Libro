@@ -47,7 +47,8 @@ builder.Services.AddSingleton<IAuthPort, AuthAdapter>()
 builder.Services.AddScoped<IUnitOfWork, UnitOfWorkAdapter>()
                 .AddScoped<IBookRepository, BookRepositoryAdapter>()
                 .AddScoped<IAuthorRepository, AuthorRepositoryAdapter>()
-                .AddScoped<IUserRepository, UserRepositoryAdapter>();
+                .AddScoped<IUserRepository, UserRepositoryAdapter>()
+                .AddScoped<ILoanRepository, LoanRepository>();
 
 var app = builder.Build();
 

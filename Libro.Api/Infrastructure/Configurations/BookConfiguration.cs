@@ -13,5 +13,8 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Title).HasMaxLength(250);
         builder.Property(x => x.Author).HasMaxLength(250);
+
+        builder.HasMany(x => x.Loans).WithOne().HasForeignKey(x => x.BookId);
+        builder.Navigation(x => x.Loans).AutoInclude();
     }
 }
