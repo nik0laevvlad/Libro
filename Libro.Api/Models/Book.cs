@@ -19,7 +19,7 @@ public class Book
         Author = author;
     }
 
-    public static Book New(string title, string author)
+    internal static Book New(string title, string author)
     {
         var book = new Book(Guid.NewGuid(), title, author);
         return book;

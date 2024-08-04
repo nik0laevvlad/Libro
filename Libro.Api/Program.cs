@@ -13,7 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWorkAdapter>()
-                .AddScoped<IBookRepository, BookRepositoryAdapter>();
+                .AddScoped<IBookRepository, BookRepositoryAdapter>()
+                .AddScoped<IAuthorRepository, AuthorRepositoryAdapter>();
 
 var app = builder.Build();
 
